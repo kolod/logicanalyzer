@@ -2,8 +2,10 @@ name: Build Pico Firmware v2
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, action ]
   pull_request:
+    branches: [ main, action ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -25,4 +27,3 @@ jobs:
           build-dir: build
           cmake-args: |
             -DCMAKE_BUILD_TYPE=Release
-
